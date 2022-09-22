@@ -22,7 +22,7 @@ const content = () => {
 
   return (
     <main>
-        <p>
+        <p onDoubleClick={handleClicked1}>
             hello {altername()}!
         </p><br />
         <button onClick={handleClicked1}>clicked me </button>

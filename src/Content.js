@@ -14,7 +14,10 @@ const content = () => {
           alert("you are clicked man");
       }
       const handleClicked2 = (name) => {
-          alert(`${name} was clicked`);
+          alert(`${name} was clicked passing parameter`);
+      }
+      const handleClicked3 = (e) => {
+          console.log(e);
       }
 
   return (
@@ -25,6 +28,8 @@ const content = () => {
         <button onClick={handleClicked1}>clicked me </button>
         <br />
         <button onClick={(name)=>handleClicked2("pavithran")}>clicked me </button>
+        <br />
+        <button onClick={(e)=>handleClicked3(e)}>clicked me </button>
     </main>
   )
 }

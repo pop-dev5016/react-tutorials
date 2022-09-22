@@ -10,8 +10,11 @@ const content = () => {
         return name[int];
       }
 
-      const handleClicked = () => {
+      const handleClicked1 = () => {
           alert("you are clicked man");
+      }
+      const handleClicked2 = (name) => {
+          alert(`${name} was clicked`);
       }
 
   return (
@@ -19,7 +22,9 @@ const content = () => {
         <p>
             hello {altername()}!
         </p><br />
-        <button onClick={handleClicked}>clicked me </button>
+        <button onClick={handleClicked1}>clicked me </button>
+        <br />
+        <button onClick={(name)=>handleClicked2("pavithran")}>clicked me </button>
     </main>
   )
 }

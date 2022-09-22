@@ -17,7 +17,7 @@ const content = () => {
           alert(`${name} was clicked passing parameter`);
       }
       const handleClicked3 = (e) => {
-          console.log(e);
+          console.log(e.target.innerText);
       }
 
   return (

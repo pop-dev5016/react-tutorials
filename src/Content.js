@@ -10,11 +10,16 @@ const content = () => {
         return name[int];
       }
 
+      const handleClicked = () => {
+          alert("you are clicked man");
+      }
+
   return (
     <main>
         <p>
             hello {altername()}!
-        </p>
+        </p><br />
+        <button onClick={handleClicked}>clicked me </button>
     </main>
   )
 }

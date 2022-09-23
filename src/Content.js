@@ -22,7 +22,8 @@ const content = () => {
      ]);
 
      const handleCheck = (id) =>{
-          const listItems = item.map
+          const listItems = item.map.item///check
+          
      }
     
         return (

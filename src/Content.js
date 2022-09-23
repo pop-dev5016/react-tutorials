@@ -22,7 +22,7 @@ const content = () => {
      ]);
 
      const handleCheck = (id) =>{
-          const listItems = item.map.item///check plz git hub vanthuru plxzgggggggvsdvashvahjafbndzgngd
+          const listItems = item.map
           cons
           
      }

@@ -1,40 +1,46 @@
 import React from 'react'
 import { useState } from "react"
+import { FaTrashAlt } from "react-icons/fa";
 
 const content = () => {
-     const [name,setName] = useState('Pop');
-     const [count,setCount]= useState(0);
+     const [items,setItems] = useState([
+        {
+            id:1,
+            checked:false,
+            item:"one half founf of bag of coco for with almound unsalted"
+        },
+        {
+            id:2,
+            checked:false,
+            item:"item 2"
+        },
+        {
+            id:3,
+            checked:false,
+            item:"item 3"
+        }
+     ]);
 
-     let name1 = "pavitharan"
-     let name2 = "vigneshwaran"
-     let name3 = "navanandhini"
-    const altername = function(){
-        const names = [name1,name2,name3]
-        const int  = Math.floor(Math.random()*3)
-        setName(names[int]);
-      }
-
-      const handleClicked1 = () => {
-          setCount(count + 1)
-          setCount(count + 1)
-          console.log("h1:",count)
-      }
-      const handleClicked2 = () => {
-          console.log("h2:",count);
-      }
-
-  return (
-    <main>
-        <p onDoubleClick={handleClicked1}>
-            hello {name}!
-        </p>
-        <button onClick={altername}>change name </button>
-        <br />
-        <button onClick={handleClicked1}>clicked me </button>
-        <br />
-        <button onClick={handleClicked2}>clicked me </button>
-    </main>
-  )
-}
+     const handleCheck = (id) =>{
+          const listItems = item.map
+     }
+    
+        return (
+            <main>
+                <ul>
+                    {items.map((item)=>(
+                        <li className='item' key={item.id}>
+                           <input type="checkbox" 
+                            onChange={()=>handleCheck(item.id)} checked={item.checked}/>
+                           <label >{item.item}</label>
+                           <FaTrashAlt role="button" tabIndex="0"/>
+                          
+                        </li>
+                    ))}
+                </ul>
+            
+            </main>
+        )
+  }
 
 export default content

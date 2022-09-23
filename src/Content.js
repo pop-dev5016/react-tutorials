@@ -17,10 +17,10 @@ const content = () => {
       const handleClicked1 = () => {
           setCount(count + 1)
           setCount(count + 1)
-          console.log(count)
+          console.log("h1:",count)
       }
       const handleClicked2 = () => {
-          console.log(count);
+          console.log("h2:",count);
       }
 
   return (

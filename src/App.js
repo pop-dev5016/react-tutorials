@@ -1,21 +1,14 @@
-
-import Header from './Header';
-import Content from './Content';
-import Footer from './Footer';
-import State from './Ractusestate';
+import Greet from "./component/Function";
 
 function App() {
   
  
   return (
     <div className="App">
-     <Header/> 
-     <State/> 
-     <Content/>
-     <Footer/>
+     <Greet/>
      
     </div>
   );
 }
 
-export default App;
+export default App

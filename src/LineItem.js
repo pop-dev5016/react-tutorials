@@ -3,7 +3,7 @@ import {FaTrashAlt} from 'react-icons/fa'
 
 const LineItem = ({item,handlecheck,handledelete}) => {
   return (
-            <li className='item' key = {item.id}>
+            <li className='item'>
             <input type ="checkbox"
             onChange={()=>handlecheck(item.id)}
             checked={item.checked}/>

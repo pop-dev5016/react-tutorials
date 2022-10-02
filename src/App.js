@@ -1,7 +1,9 @@
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
-import Greet from "./component/Function";
+
+
+
 function App() {
   return (
     <div className="App">

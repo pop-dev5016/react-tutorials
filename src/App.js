@@ -56,9 +56,26 @@ function App() {
             if(result) setFetcherror(result)
    }
 
-    const handlecheck = (id)=>{
+    const handlecheck = async (id)=>{
         const listItems = items.map((item)=>item.id==id?{...item,checked:!item.checked}:item)
-        SetItems(listItems)
+        SetItems(listItems);
+
+        const myItem = listItems.filter(item =>item.id === id)
+        const updateOption ={
+          method:'PATCH',
+          headers:{
+            'content-Type':"application/json"
+          },
+          body:JSON.stringify({ checked:myItem[0].checked})
+        };
+        const reqUrl = `${API_URL}/${id}`;
+        const result = await apiRequest(reqUrl,updateOption)
+        if(result)setFetcherror(result);
+
+
+
+
+
     }
 
     const handledelete = (id)=>{

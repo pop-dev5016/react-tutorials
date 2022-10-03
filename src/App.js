@@ -30,7 +30,10 @@ function App() {
 
         }
       }
-       (async()=>await fetchItems())();
+      setTimeout(()=>{
+        (async()=>await fetchItems())();
+      },2000)
+      
     },[])
 
   

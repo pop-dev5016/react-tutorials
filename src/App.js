@@ -17,7 +17,6 @@ function App() {
   const [isloading,setIsLoading] = useState(true)
 
    useEffect(()=>{
-
       const fetchItems = async ()=>{
         try {
           const response = await fetch (API_URL)

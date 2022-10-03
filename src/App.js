@@ -10,20 +10,23 @@ import SearchItems from './SearchItems';
 function App() {
   const API_URL = "http://localhost:3500/itemss"
   
-  const [items,SetItems] = useState([])
-  const [newitem,setNewItems] = useState('')
-  const [search,setSearch] = useState("")
+  const [items,SetItems] = useState([]);
+  const [newitem,setNewItems] = useState('');
+  const [search,setSearch] = useState("");
+  const [fetcherror,setFetcherror] = useState(null)
 
    useEffect(()=>{
 
       const fetchItems = async ()=>{
         try {
           const response = await fetch (API_URL)
+          if (!response.ok) throw Error("did not recieve expected output")
           const listItems = await response.json()
           console.log(listItems);///check output it came
           SetItems(listItems)
+          setFetcherror(null)
         }catch(err){
-          console.log(err.stack);
+          setFetcherror(err.message)
 
         }
       }

@@ -8,7 +8,7 @@ import SearchItems from './SearchItems';
 
 
 function App() {
-  const API_URL = "http://localhost:3500/itemss"
+  const API_URL = "http://localhost:3500/items"
   
   const [items,SetItems] = useState([]);
   const [newitem,setNewItems] = useState('');
@@ -20,7 +20,7 @@ function App() {
       const fetchItems = async ()=>{
         try {
           const response = await fetch (API_URL)
-          if (!response.ok) throw Error("did not recieve expected output")
+          if (!response.ok) throw Error("did not recieve expected data")
           const listItems = await response.json()
           console.log(listItems);///check output it came
           SetItems(listItems)
@@ -66,7 +66,16 @@ function App() {
      <AddItem 
      newitem={newitem} setNewItems={setNewItems} handlesubmit={handlesubmit}></AddItem>
      <SearchItems search={search} setSearch={setSearch}></SearchItems>
-     <Content items={items.filter(item=>((item.item).toLowerCase()).includes(search.toLowerCase()))} handlecheck={handlecheck} handledelete={handledelete}/>
+
+
+     <main>
+      {fetcherror && <p style={{color:"red"}}>{`Error:${fetcherror}`}</p>}
+               {!fetcherror && <Content items={items.filter(item=>((item.item).toLowerCase()).includes(search.toLowerCase()))} handlecheck={handlecheck} handledelete={handledelete}/>}
+     </main>
+
+
+
+
      <Footer length={items.length}/>   
     
     </div>

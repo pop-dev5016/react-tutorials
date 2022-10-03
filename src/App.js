@@ -8,7 +8,7 @@ import SearchItems from './SearchItems';
 
 
 function App() {
-  const API_URL = "http://localhost:3500/items"
+  const API_URL = "http://localhost:3500/itemss"
   
   const [items,SetItems] = useState([])
   const [newitem,setNewItems] = useState('')
@@ -20,7 +20,7 @@ function App() {
         try {
           const response = await fetch (API_URL)
           const listItems = await response.json()
-          console.log(listItems);
+          console.log(listItems);///check output it came
           SetItems(listItems)
         }catch(err){
           console.log(err.stack);
